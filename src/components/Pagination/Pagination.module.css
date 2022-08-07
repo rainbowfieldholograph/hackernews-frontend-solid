@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.current {
+  color: var(--color-primary);
+}
