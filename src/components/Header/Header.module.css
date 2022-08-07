@@ -1,0 +1,11 @@
+.header {
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: var(--color-primary);
+}
+
+.description {
+  color: var(--color-neutral);
+}

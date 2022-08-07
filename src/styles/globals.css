@@ -1,0 +1,9 @@
+:root {
+  --color-primary: hsl(228, 40%, 25%);
+  --color-accent: hsl(12, 88%, 60%);
+  --color-neutral: hsl(230, 3%, 40%);
+
+  --ff-primary: 'Oxygen', 'Roboto', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Arial,
+    'Ubuntu', 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Cantarell', 'Open Sans',
+    'Helvetica Neue', sans-serif;
+}
