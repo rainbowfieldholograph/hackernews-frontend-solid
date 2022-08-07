@@ -1,5 +1,5 @@
+import { Component, Show } from 'solid-js';
 import styles from './StoryItem.module.css';
-import type { Component } from 'solid-js';
 import type { Story } from '../../api';
 
 type Props = Story & {
@@ -14,7 +14,7 @@ export const StoryItem: Component<Props> = (props) => {
         {props.title}
       </a>{' '}
       <a class={styles.domain} href={props.domain}>
-        ({props.domain})
+        <Show when={props.domain}>({props.domain})</Show>
       </a>
     </div>
   );

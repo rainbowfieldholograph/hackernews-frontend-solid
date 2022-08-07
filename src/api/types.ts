@@ -11,7 +11,7 @@ export interface Story {
   points: string;
   url: string;
   title: string;
-  domain: string;
+  domain?: string;
   type: string;
   time_ago: string;
   user: string;
