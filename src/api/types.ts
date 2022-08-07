@@ -18,3 +18,7 @@ export interface Story {
   comments_count: number;
   comments: Comment[];
 }
+
+export const storyCategories = ['news', 'newest', 'show', 'ask', 'jobs'] as const;
+
+export type StoryCategories = typeof storyCategories[number];

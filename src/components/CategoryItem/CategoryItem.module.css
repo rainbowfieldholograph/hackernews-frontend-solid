@@ -1,0 +1,10 @@
+.category {
+  border: 1px solid var(--color-neutral);
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.category.active {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
