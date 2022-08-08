@@ -65,6 +65,7 @@ h6 {
 
 #root {
   isolation: isolate;
+  height: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {

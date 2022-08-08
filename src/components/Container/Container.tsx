@@ -1,6 +1,17 @@
+import { JSX, ParentComponent, splitProps } from 'solid-js';
 import styles from './Container.module.css';
-import type { ParentComponent } from 'solid-js';
 
-export const Container: ParentComponent = (props) => {
-  return <div class={styles.container}>{props.children}</div>;
+type Props = JSX.HTMLAttributes<HTMLDivElement>;
+
+export const Container: ParentComponent<Props> = (props) => {
+  const [local, rest] = splitProps(props, ['children', 'class']);
+
+  return (
+    <div
+      class={local.class ? [styles.container, local.class].join(' ') : styles.container} // todo: use clsx maybe?
+      {...rest}
+    >
+      {local.children}
+    </div>
+  );
 };
