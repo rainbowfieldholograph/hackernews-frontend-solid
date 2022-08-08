@@ -2,11 +2,14 @@ import { currentPage, setCurrentPage } from '../../store';
 import styles from './Pagination.module.css';
 import type { Component } from 'solid-js';
 
+const MIN_PAGE = 0;
+const MAX_PAGE = 10;
+
 export const Pagination: Component = () => {
   const changeCurrentPage = (operand: number) => () => {
     setCurrentPage((prev) => {
       const newValue = prev + operand;
-      if (newValue <= 0) return prev;
+      if (newValue <= MIN_PAGE || newValue > MAX_PAGE) return prev;
       return prev + operand;
     });
   };

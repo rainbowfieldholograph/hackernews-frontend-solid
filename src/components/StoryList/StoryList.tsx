@@ -1,4 +1,4 @@
-import { Component, createResource, For, Show } from 'solid-js';
+import { Component, createResource, For, Match, Switch } from 'solid-js';
 import { getStories } from '../../api';
 import { currentCategory, currentPage } from '../../store';
 import { StoryItem } from '../StoryItem';
@@ -9,16 +9,25 @@ export const StoryList: Component = () => {
   const [stories] = createResource(paramList, getStories);
 
   return (
-    <Show when={stories()?.data && !stories.loading} fallback={<div>Data loading...</div>}>
-      <ol class={styles.list}>
-        <For each={stories()?.data}>
-          {(story, index) => (
-            <li>
-              <StoryItem index={index()} {...story} />
-            </li>
-          )}
-        </For>
-      </ol>
-    </Show>
+    <Switch
+      fallback={
+        <ol class={styles.list}>
+          <For each={stories()?.data}>
+            {(story, index) => (
+              <li>
+                <StoryItem index={index()} {...story} />
+              </li>
+            )}
+          </For>
+        </ol>
+      }
+    >
+      <Match when={stories.loading}>
+        <div>Data loading...</div>
+      </Match>
+      <Match when={!stories()?.data.length}>
+        <div>No data found</div>
+      </Match>
+    </Switch>
   );
 };
