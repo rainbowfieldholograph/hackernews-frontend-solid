@@ -1,11 +1,17 @@
 .item {
   border: 1px solid black;
   padding: 0.5rem;
+
+  display: flex;
 }
 
 .index {
   color: var(--color-accent);
   margin-right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
 }
 
 .link {
@@ -15,4 +21,8 @@
 .domain {
   color: var(--color-neutral);
   font-size: 0.8rem;
+}
+
+.foot {
+  color: var(--color-neutral);
 }

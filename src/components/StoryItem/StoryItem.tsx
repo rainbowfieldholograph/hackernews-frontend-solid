@@ -18,13 +18,21 @@ export const StoryItem: Component<Props> = (props) => {
 
   return (
     <div class={styles.item}>
-      <span class={styles.index}>{calculateIndex()}.</span>
-      <a class={styles.link} href={props.url}>
-        {props.title}
-      </a>{' '}
-      <a class={styles.domain} href={props.domain}>
-        <Show when={props.domain}>({props.domain})</Show>
-      </a>
+      <div class={styles.index}>{calculateIndex()}</div>
+      <div class={styles.content}>
+        <div class={styles.head}>
+          <a class={styles.link} href={props.url}>
+            {props.title}
+          </a>{' '}
+          <a class={styles.domain} href={props.domain}>
+            <Show when={props.domain}>({props.domain})</Show>
+          </a>
+        </div>
+        <div class={styles.foot}>
+          <span>{props.points} points</span> <span>by {props.user}</span>{' '}
+          <span>{props.time_ago}</span> <span>{props.comments_count} comments</span>
+        </div>
+      </div>
     </div>
   );
 };
