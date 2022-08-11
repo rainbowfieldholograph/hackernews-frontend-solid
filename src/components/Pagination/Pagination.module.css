@@ -9,6 +9,14 @@
   gap: 0.5rem;
 }
 
+.button {
+  border: 1px solid var(--color-primary);
+}
+
+.button:nth-child(2) svg {
+  transform: rotate(180deg);
+}
+
 .current {
   color: var(--color-primary);
 }
